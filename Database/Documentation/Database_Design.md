@@ -4,7 +4,7 @@
 
 Design a scalable PostgreSQL database for the Real Estate Property Management Platform.
 
-## Modules
+## Entities
 
 - Users
 - Builders
@@ -15,4 +15,12 @@ Design a scalable PostgreSQL database for the Real Estate Property Management Pl
 - Subscriptions
 - Documents
 
-Status: In Progress
+## Features
+
+- Primary Keys
+- Foreign Keys
+- Constraints
+- Normalization (3NF)
+- Indexed relationships
+
+Status: Database schema completed.
