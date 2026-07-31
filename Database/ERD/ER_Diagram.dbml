@@ -1,0 +1,62 @@
+Table Users {
+  user_id int [pk, increment]
+  first_name varchar
+  last_name varchar
+  email varchar
+  phone varchar
+}
+
+Table Builders {
+  builder_id int [pk, increment]
+  builder_name varchar
+  contact_email varchar
+}
+
+Table Properties {
+  property_id int [pk, increment]
+  builder_id int
+  property_name varchar
+  location varchar
+  price decimal
+}
+
+Table Leads {
+  lead_id int [pk, increment]
+  user_id int
+  property_id int
+  status varchar
+}
+
+Table Visits {
+  visit_id int [pk, increment]
+  lead_id int
+  visit_date date
+}
+
+Table Payments {
+  payment_id int [pk, increment]
+  user_id int
+  property_id int
+  amount decimal
+}
+
+Table Subscriptions {
+  subscription_id int [pk, increment]
+  builder_id int
+  plan varchar
+}
+
+Table Documents {
+  document_id int [pk, increment]
+  property_id int
+  document_name varchar
+}
+
+Ref: Properties.builder_id > Builders.builder_id
+Ref: Leads.user_id > Users.user_id
+Ref: Leads.property_id > Properties.property_id
+Ref: Visits.lead_id > Leads.lead_id
+Ref: Payments.user_id > Users.user_id
+Ref: Payments.property_id > Properties.property_id
+Ref: Subscriptions.builder_id > Builders.builder_id
+Ref: Documents.property_id > Properties.property_id
